@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/auth.php';
-require_admin();                      // redirects to main.php if not admin
+require_admin();                      // redirects to index.php if not admin
 require_once __DIR__ . '/nav_auth.php';
 
 $db = get_db();
@@ -416,9 +416,9 @@ $user_count = $db->query("SELECT COUNT(*) as c FROM users WHERE role='student'")
 
 <!-- NAV -->
 <nav>
-    <a href="main.php" class="left-side"><img src="Images/Logo/BICpES Learning Hub Logo.png" alt="Logo"></a>
+    <a href="index.php" class="left-side"><img src="Images/Logo/BICpES Learning Hub Logo.png" alt="Logo"></a>
     <div class="nav-center">
-        <a href="main.php"><span><strong>BICpES</strong></span> Learning Hub</a>
+        <a href="index.php"><span><strong>BICpES</strong></span> Learning Hub</a>
     </div>
     <div class="right-side">
         <?php echo nav_right_html(); ?>
@@ -451,7 +451,7 @@ $user_count = $db->query("SELECT COUNT(*) as c FROM users WHERE role='student'")
         </button>
 
         <div class="sidebar-divider"></div>
-        <button class="sidebar-btn" onclick="location.href='main.php'">
+        <button class="sidebar-btn" onclick="location.href='index.php'">
             <span class="icon">🏠</span> Back to Site
         </button>
     </aside>

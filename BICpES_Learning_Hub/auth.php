@@ -40,7 +40,7 @@ function is_admin(): bool
     return is_logged_in() && current_role() === 'admin';
 }
 
-function redirect(string $url = 'main.php'): never
+function redirect(string $url = 'index.php'): never
 {
     header('Location: ' . $url);
     exit;
@@ -49,18 +49,18 @@ function redirect(string $url = 'main.php'): never
 function require_admin(): void
 {
     if (!is_admin()) {
-        redirect('main.php');
+        redirect('index.php');
     }
 }
 
 /**
  * Guards a page to logged-in users only.
- * Redirects to main.php with a flag that triggers the login modal.
+ * Redirects to index.php with a flag that triggers the login modal.
  */
 function require_login(): void
 {
     if (!is_logged_in()) {
-        redirect('main.php?require_login=1');
+        redirect('index.php?require_login=1');
     }
 }
 
@@ -227,7 +227,7 @@ function logout_user(): never
     }
 
     session_destroy();
-    redirect('main.php');
+    redirect('index.php');
 }
 
 // ─── UPDATE PROFILE ───────────────────────────────────────────────────────────

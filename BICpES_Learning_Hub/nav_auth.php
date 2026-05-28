@@ -240,7 +240,7 @@ HTML;
 
 /**
  * Returns the inline JS block for auth-aware behaviour.
- * Paste just before </body> on main.php.
+ * Paste just before </body> on index.php.
  */
 function nav_scripts_html(): string
 {
@@ -255,7 +255,7 @@ function nav_scripts_html(): string
     function openModal(id)  { const o = $(id); if (o) { o.classList.add('open');    document.body.style.overflow = 'hidden'; } }
     function closeModal(id) { const o = $(id); if (o) { o.classList.remove('open'); document.body.style.overflow = '';       } }
 
-    /* ── Login / Sign-up form (main.php only) ─────────────────────────── */
+    /* ── Login / Sign-up form (index.php only) ─────────────────────────── */
     const loginSection = $('login');
     if (loginSection) {
         const signUpBtn = $('signUp');
@@ -308,7 +308,7 @@ function nav_scripts_html(): string
                 const res = await postAuth(payload);
                 if (res.success) {
                     // Force a full page reload so PHP re-renders with the new session
-                    window.location.replace('main.php');
+                    window.location.replace('index.php');
                 } else {
                     showFormMsg(loginForm, res.message, 'error');
                 }
@@ -352,7 +352,7 @@ function nav_scripts_html(): string
         if (panelBtnEdit)   panelBtnEdit.addEventListener('click',   () => { close(); openModal('modalEditOverlay'); });
         if (panelBtnPass)   panelBtnPass.addEventListener('click',   () => { close(); openModal('modalPassOverlay'); });
         if (panelBtnLogout) panelBtnLogout.addEventListener('click', () => {
-            postAuth({ action: 'logout' }).finally(() => { location.href = 'main.php'; });
+            postAuth({ action: 'logout' }).finally(() => { location.href = 'index.php'; });
         });
     }
 

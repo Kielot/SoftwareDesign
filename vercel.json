@@ -1,0 +1,56 @@
+{
+  "name": "BICpES Learning Hub",
+  "version": 2,
+  "framework": "php",
+  "env": {
+    "DB_TYPE": {
+      "description": "Database type: mysql or postgres",
+      "default": "postgres"
+    },
+    "DB_HOST": {
+      "description": "Database host (e.g., your-project.supabase.co)"
+    },
+    "DB_PORT": {
+      "description": "Database port",
+      "default": "5432"
+    },
+    "DB_USER": {
+      "description": "Database user"
+    },
+    "DB_PASS": {
+      "description": "Database password",
+      "type": "secret"
+    },
+    "DB_NAME": {
+      "description": "Database name",
+      "default": "postgres"
+    },
+    "APP_ENV": {
+      "description": "Application environment",
+      "default": "production"
+    },
+    "SESSION_SECURE": {
+      "description": "Use secure session cookies",
+      "default": "true"
+    }
+  },
+  "buildCommand": "echo 'PHP build complete'",
+  "routes": [
+    {
+      "src": "/(.*\\.php)$",
+      "dest": "/$1",
+      "methods": ["GET", "HEAD", "POST", "PUT", "DELETE"]
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.php"
+    }
+  ],
+  "functions": {
+    "BICpES_Learning_Hub/**/*.php": {
+      "runtime": "php-8.2",
+      "handler": "index.handler"
+    }
+  },
+  "outputDirectory": "public"
+}

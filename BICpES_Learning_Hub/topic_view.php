@@ -61,9 +61,9 @@ $hero_tag    = "Topic {$topic_num} · {$category}";
 
     <!-- NAV -->
     <nav>
-        <a href="main.php" class="left-side"><img src="Images/Logo/BICpES Learning Hub Logo.png" alt="Logo"></a>
+        <a href="index.php" class="left-side"><img src="Images/Logo/BICpES Learning Hub Logo.png" alt="Logo"></a>
         <div class="center">
-            <a href="main.php"><span><strong>BICpES</strong></span> Learning Hub</a>
+            <a href="index.php"><span><strong>BICpES</strong></span> Learning Hub</a>
         </div>
         <div class="right-side">
             <?php echo nav_right_html(); ?>
@@ -72,7 +72,7 @@ $hero_tag    = "Topic {$topic_num} · {$category}";
 
     <!-- BREADCRUMB -->
     <div class="breadcrumb">
-        <a href="main.php">Home</a>
+        <a href="index.php">Home</a>
         <span class="sep">›</span>
         <a href="topics_section.php">Topics</a>
         <span class="sep">›</span>
